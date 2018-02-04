@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-#define N 4
+#define N 8
 
 void print_mat(int mat[N][N]){
 
@@ -67,13 +67,13 @@ bool solve(int mat[N][N], int n){
 		return true;
 	for(int i=0;i<N;i++){
 
-			if(is_valid(mat,i,j)){
-				mat[i][n] = 1;
-				if(solve(mat,n+1)==true)
-					return true;
-				else
-					mat[i][n] = 0;
-			}
+		if(is_valid(mat,i,n)){
+			mat[i][n] = 1;
+			if(solve(mat,n+1)==true)
+				return true;
+			else
+				mat[i][n] = 0;
+		}
 		
 	}
 	return false;
