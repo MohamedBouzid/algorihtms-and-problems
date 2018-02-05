@@ -6,11 +6,12 @@ template<typename T>
 class SegmentTree{
 	public:
 		T length;
-		T elements[1000000];
+		vector<T> elements;
 		vector<T> s;
 
 		SegmentTree(T length){
 			this->length = length;
+			elements.resize(length);
 			s.resize(4*length);
 		}
 
